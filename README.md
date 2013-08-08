@@ -22,9 +22,10 @@ A lightweight hashtag history tracker with wildcard capabilities.
     });
 
 #### Push history and trigger event
-    hashcard.push('/path/foo/bar';
+    hashcard.push('/path/foo/bar');
 
-#### Remove
+#### Remove event (Must be declared with a defined function for this to work)
+
     hashcard.on('/path/foo', myFunction);
 
     hashcard.off('/path/foo', myFunction);
