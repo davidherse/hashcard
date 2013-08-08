@@ -1,5 +1,5 @@
 /*
- HashCard v0.1
+ HashCard v0.1.1
 https://github.com/davidherse/hashcard
 
 (The MIT License)
@@ -38,7 +38,7 @@ IN THE SOFTWARE.
             numberParams = numberParams || pattern.split('*').length-1
             params = numberParams ? data.splice(numberParams, data.length) : data;
         for (var i = callbacks[pattern].length - 1; i >= 0; i--) {            
-          callbacks[pattern][i].apply(this, data);
+          callbacks[pattern][i].apply(this, params);
         }
       }
     },
@@ -46,7 +46,7 @@ IN THE SOFTWARE.
       return new RegExp('^'+pattern
             .replace(/\*/g, '+')
             .replace(/:[A-Za-z0-9 _.-]+(?=\/)/g, '[A-Za-z0-9 _.-]+')
-            .replace(/:[A-Za-z0-9 _.-]+$/g, '[A-Za-z0-9 _.-]+$'));
+            .replace(/:[A-Za-z0-9 _.-]+$/g, '[A-Za-z0-9 _.-]+$')+'(?!/)');
     },
     hashChange = function(e) {
       var hash = (location.href.split("#")[1] || ""),
