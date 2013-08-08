@@ -31,6 +31,9 @@
                 <li>
                   <a href="#bar">#bar (does nothing)</a>
                 </li>
+                <li>
+                    <a href="https://github.com/davidherse/hashcard">Download from GitHub</a>
+                 </li>
               </ul>
             </div>
           </div>
@@ -83,11 +86,9 @@ hashcard.on('foo', function(param1) {
 </pre>
 </div>
 </div>
-        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-        
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
         <script src="js/hashcard.js"></script>
         <script>
-
             hashcard.on('*', function(param1) {
                 $('#foo-bar').text('');
                 $('#foo-bar-item-id').text('');
@@ -118,8 +119,6 @@ hashcard.on('foo', function(param1) {
                     param1: param1,
                 }));
             });
-
-
         </script>
     </body>
 </html>
