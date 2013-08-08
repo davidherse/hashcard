@@ -21,7 +21,7 @@ A lightweight hashtag history tracker with wildcard capabilities.
       //..
     });
 
-#### Push history and trigger event
+#### Push hash state and trigger event
     hashcard.push('/path/foo/bar');
 
 #### Remove event (Must be declared with a defined function for this to work)
