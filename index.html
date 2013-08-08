@@ -3,7 +3,7 @@
         <title>Hash Card Demo</title>
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
-        
+
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
@@ -23,7 +23,7 @@
                   <a href="#foo/bar/test/01">#foo/bar/test/01</a>
                 </li>
                 <li>
-                  <a href="#foo/bar/test/02">#foo/bar/02</a> 
+                  <a href="#foo/bar/test/02">#foo/bar/02</a>
                 </li>
                 <li>
                   <a href="#foo">#foo</a>
@@ -48,7 +48,7 @@ hashcard.on('foo/bar', function(param1, param2) {
 });
 </pre>
 <p>Output</p>
-<pre id="foo-bar"> 
+<pre id="foo-bar">
 </pre>
 </div>
     <div class="output">
@@ -59,7 +59,7 @@ hashcard.on('foo/bar/:item/:id', function(item, id) {
 });
 </pre>
 <p>Output</p>
-<pre id="foo-bar-item-id"> 
+<pre id="foo-bar-item-id">
 </pre>
 </div>
     <div class="output">
@@ -70,7 +70,7 @@ hashcard.on('foo/*', function(param1, param2, param3) {
 });
 </pre>
 <p>Output</p>
-<pre id="foo-wildcard"> 
+<pre id="foo-wildcard">
 </pre>
 </div>
     <div class="output">
@@ -81,18 +81,18 @@ hashcard.on('foo', function(param1) {
 });
 </pre>
 <p>Output</p>
-<pre id="foo-1"> 
+<pre id="foo-1">
 </pre>
 </div>
 </div>
-        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script> 
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
         <script src="js/hashcard.js"></script>
         <script>
             hashcard.on('*', function(param1) {
                 $('#foo-bar').text('');
                 $('#foo-bar-item-id').text('');
-                $('#foo-wildcard').text('');  
-                $('#foo-1').text('');  
+                $('#foo-wildcard').text('');
+                $('#foo-1').text('');
             });
             hashcard.on('foo/bar', function(param1, param2) {
               $('#foo-bar').text(JSON.stringify({
@@ -115,7 +115,7 @@ hashcard.on('foo', function(param1) {
             });
             hashcard.on('foo', function(param1) {
                 $('#foo-1').text(JSON.stringify({
-                    param1: param1,
+                    param1: param1
                 }));
             });
         </script>
