@@ -11,7 +11,7 @@ A lightweight hashtag history tracker with wildcard capabilities.
 
 ###Wildcards
 
-###¢ Parameters
+#### Parameters
     hashcard.on('/path/:foo/:bar', function(foo, bar) {
       //..
     });
