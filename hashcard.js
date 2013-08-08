@@ -43,6 +43,9 @@ IN THE SOFTWARE.
       }
     },
     createExpression = function(pattern) {
+      if (pattern === '*') {
+        return '.';
+      }
       return new RegExp('^'+pattern
             .replace(/\*/g, '+')
             .replace(/:[A-Za-z0-9 _.-]+(?=\/)/g, '[A-Za-z0-9 _.-]+')
