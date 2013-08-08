@@ -3,6 +3,8 @@ hashcard 0.1.1
 
 A lightweight hashtag history tracker with wildcard capabilities.
 
+[Demo](http://davidherse.github.io/hashcard/)
+
 ##Usage
 
     hashcard.on('/path/to/foo', function() {
