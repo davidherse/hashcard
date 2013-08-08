@@ -49,7 +49,7 @@ IN THE SOFTWARE.
     },
     hashChange = function(e) {
       var hash = (location.href.split("#")[1] || ""),
-           hashArray = hash.split('/'),
+          hashArray = hash.split('/'),
           wildcardPath = '';
           hashArray.shift();
       for(var pattern in expressions) {
