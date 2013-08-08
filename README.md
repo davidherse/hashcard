@@ -1,4 +1,4 @@
-hashcard
+hashcard 0.1
 ========
 
 A lightweight hashtag history tracker with wildcard capabilities.
@@ -9,14 +9,14 @@ A lightweight hashtag history tracker with wildcard capabilities.
       //..
     });
 
-##Wildcards
+###Wildcards
 
-### Parameters
+###¢ Parameters
     hashcard.on('/path/:foo/:bar', function(foo, bar) {
       //..
     });
 
-### All
+#### All
     hashcard.on('/path/*', function(param1, param2, ect..) {
       //..
     });
