@@ -1,1 +1,125 @@
-HashCard Demo
+<html>
+    <head>
+        <title>Hash Card Demo</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav">
+          <div class="container">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">HashCard 0.1.1</a>
+            <div class="nav-collapse collapse bs-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href="#foo/bar">#foo/bar</a>
+                </li>
+                <li>
+                  <a href="#foo/bar/test/01">#foo/bar/test/01</a>
+                </li>
+                <li>
+                  <a href="#foo/bar/test/02">#foo/bar/02</a> 
+                </li>
+                <li>
+                  <a href="#foo">#foo</a>
+                </li>
+                <li>
+                  <a href="#bar">#bar (does nothing)</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="container main">
+     
+        <div class="output">
+            <p>Event</p>
+<pre>
+
+hashcard.on('foo/bar', function(param1, param2) {
+  //..
+});
+</pre>
+<p>Output</p>
+<pre id="foo-bar"> 
+</pre>
+</div>
+    <div class="output">
+        <p>Event</p>
+<pre>
+hashcard.on('foo/bar/:item/:id', function(item, id) {
+  //..
+});
+</pre>
+<p>Output</p>
+<pre id="foo-bar-item-id"> 
+</pre>
+</div>
+    <div class="output">
+        <p>Event</p>
+<pre>
+hashcard.on('foo/*', function(param1, param2, param3) {
+  //..
+});
+</pre>
+<p>Output</p>
+<pre id="foo-wildcard"> 
+</pre>
+</div>
+    <div class="output">
+        <p>Event</p>
+<pre>
+hashcard.on('foo', function(param1) {
+  //..
+});
+</pre>
+<p>Output</p>
+<pre id="foo-1"> 
+</pre>
+</div>
+</div>
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+        
+        <script src="js/hashcard.js"></script>
+        <script>
+
+            hashcard.on('*', function(param1) {
+                $('#foo-bar').text('');
+                $('#foo-bar-item-id').text('');
+                $('#foo-wildcard').text('');  
+                $('#foo-1').text('');  
+            });
+            hashcard.on('foo/bar', function(param1, param2) {
+              $('#foo-bar').text(JSON.stringify({
+                  param1: param1,
+                  param2: param2
+                  }));
+            });
+            hashcard.on('foo/bar/:item/:id', function(item, id) {
+                $('#foo-bar-item-id').text(JSON.stringify({
+                    item: item,
+                    id: id
+                }));
+            });
+            hashcard.on('foo/*', function(param1, param2, param3) {
+                $('#foo-wildcard').text(JSON.stringify({
+                      param1: param1,
+                      param2: param2,
+                      param3: param3
+                }));
+            });
+            hashcard.on('foo', function(param1) {
+                $('#foo-1').text(JSON.stringify({
+                    param1: param1,
+                }));
+            });
+
+
+        </script>
+    </body>
+</html>
