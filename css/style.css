@@ -5,3 +5,8 @@
 	min-height: 220px;
 	width: 600px;
 }
+
+.navbar {
+  background: #000;
+  padding-top: 20px;
+}
