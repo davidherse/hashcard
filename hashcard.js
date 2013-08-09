@@ -32,12 +32,12 @@ IN THE SOFTWARE.
     var callbacks = {},
         expressions = {},
 
-    trigger = function(pattern, data, e) {        
+    trigger = function(pattern, data, e) {
       if (callbacks[pattern]) {
         var numberParams = pattern.split(':').length-1;
-            numberParams = numberParams || pattern.split('*').length-1
+            numberParams = numberParams || pattern.split('*').length-1;
             params = numberParams ? data.splice(numberParams, data.length) : data;
-        for (var i = callbacks[pattern].length - 1; i >= 0; i--) {            
+        for (var i = callbacks[pattern].length - 1; i >= 0; i--) {
           callbacks[pattern][i].apply(this, params);
         }
       }
@@ -56,9 +56,9 @@ IN THE SOFTWARE.
           hashArray = hash.split('/'),
           wildcardPath = '';
           hashArray.shift();
-          
+
       for(var pattern in expressions) {
-        if (~hash.search(expressions[pattern])) {            
+        if (~hash.search(expressions[pattern])) {
           trigger(pattern, hash.split('/'));
         }
       }
