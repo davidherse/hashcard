@@ -1,4 +1,4 @@
-hashcard 0.1.1
+hashcard 0.1.2
 ========
 
 A lightweight hashtag history tracker with wildcard capabilities.

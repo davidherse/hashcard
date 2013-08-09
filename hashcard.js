@@ -1,5 +1,5 @@
 /*
- HashCard v0.1.1
+HashCard v0.1.2
 https://github.com/davidherse/hashcard
 
 (The MIT License)
@@ -31,6 +31,7 @@ IN THE SOFTWARE.
    window.hashcard = window.hashcard || function() {
     var callbacks = {},
         expressions = {},
+        hashArray = [],
 
     trigger = function(pattern, data, e) {
       if (callbacks[pattern]) {
@@ -53,8 +54,8 @@ IN THE SOFTWARE.
     },
     hashChange = function(e) {
       var hash = (location.href.split("#")[1] || ""),
-          hashArray = hash.split('/'),
           wildcardPath = '';
+          hashArray = hash.split('/'),
           hashArray.shift();
 
       for(var pattern in expressions) {
@@ -93,6 +94,12 @@ IN THE SOFTWARE.
             }
           }
         }
+      },
+      hash: function() {
+        return hashArray;
+      },
+      hasHash: function() {
+        return hashArray.length > 0;
       }
     };
   }();
