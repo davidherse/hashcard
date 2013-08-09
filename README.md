@@ -33,10 +33,10 @@ A lightweight hashtag history tracker with wildcard capabilities.
     hashcard.off('/path/foo', myFunction);
 
 ### Requirements
-* JQuery
+* JQuery 1.10.2+
 
 ### Browser Support
 * Chrome
 * Safari
 * Firefox
-* ie7+
+* ie8+
